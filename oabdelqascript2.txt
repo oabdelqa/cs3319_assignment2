@@ -1,0 +1,5 @@
+-- make sure you are connected to correct database
+USE oabdelqaassign2db
+
+-- load data into product table 
+LOAD DATA LOCAL INFILE 
