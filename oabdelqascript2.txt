@@ -65,3 +65,12 @@ UPDATE customer SET agentid="66" WHERE customerid="31";
 
 -- show that loading was successful
 SELECT * FROM customer; 
+
+-- change Super Man to Wonder Woman 
+UPDATE customer SET firstname="Wonder",lastname="Woman" WHERE firstname="Super" AND lastname="Man"; 
+UPDATE purchases SET quantitypurchased=5 WHERE firstname="Sideshow"; 
+UPDATE customer SET city="Boston" WHERE agentfirstname="Regis"; 
+
+-- show changes were successful
+SELECT * FROM customer; 
+SELECT * FROM purchases; 

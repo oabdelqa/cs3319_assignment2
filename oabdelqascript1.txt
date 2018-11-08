@@ -30,13 +30,16 @@ KEY(agentid));
 
 CREATE TABLE customer (customerid CHAR(2) NOT NULL, firstname 
 VARCHAR(30), lastname VARCHAR(30), city VARCHAR(15), phoneNum VARCHAR(10), 
-agentid CHAR(2), PRIMARY KEY(customerid), FOREIGN KEY(agentid) 
-REFERENCES agent(agentid));
+agentid CHAR(2), agentfirstname VARCHAR(30), agentlastname VARCHAR(30), PRIMARY KEY(customerid), FOREIGN KEY(agentid) 
+REFERENCES agent(agentid), FOREIGN KEY(agentfirstname) REFERENCES agent(firstname), FOREIGN KEY(agentlastname) REFERENCES 
+agent(lastname));
 
-CREATE TABLE purchases (customerid CHAR(2), productid CHAR(2), 
-quantitypurchased INT, PRIMARY KEY(customerid, productid), FOREIGN 
+CREATE TABLE purchases (customerid CHAR(2), customerfirstname VARCHAR(30), customerlastname VARCHAR(30), productid CHAR(2), productdesc 
+VARCHAR(20), quantitypurchased INT, PRIMARY KEY(customerid, productid), FOREIGN 
 KEY(customerid) REFERENCES customer(customerid), FOREIGN KEY(productid) 
-REFERENCES product(productid)); 
+REFERENCES product(productid), FOREIGN KEY(productdesc) REFERENCES product(description), FOREIGN KEY(customerfirstname) REFERENCES 
+customer(firstname), FOREIGN KEY(customerlastname) REFERENCES 
+customer(lastname)); 
 
 -- list all tables to confirm creation 
 SHOW TABLES; 
