@@ -1,4 +1,4 @@
---show databases, drop database (if it exists), and create new database
+--show databases, drop database and create new database
 SHOW DATABASES;
 DROP DATABASE IF EXISTS oabdelqaassign2db;
 CREATE DATABASE IF NOT EXISTS oabdelqaassign2db;
