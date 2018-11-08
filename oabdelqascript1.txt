@@ -1,25 +1,25 @@
---show databases, drop database and create new database
+-- show drop and create new database
 SHOW DATABASES;
 DROP DATABASE IF EXISTS oabdelqaassign2db;
 CREATE DATABASE IF NOT EXISTS oabdelqaassign2db;
 
---show databases again to confirm successful creation
+-- show databases again to confirm successful creation
 SHOW DATABASES; 
 
---connect to database
+-- connect to database
 USE oabdelqaassign2db
 
---grant access to TA for marking 
+-- grant access to TA for marking 
 GRANT USAGE ON *.* TO 'ta'@'localhost';
 DROP USER 'ta'@'localhost';
 CREATE USER 'ta'@'localhost' IDENTIFIED BY 'cs3319';
 GRANT ALL PRIVILEGES ON oabdelqaassign2db.* TO 'ta'@'localhost';
 FLUSH PRIVILEGES;
 
---list all tables 
+-- list all tables 
 SHOW TABLES; 
 
---create 4 tables needed for database
+-- create 4 tables needed for database
 
 CREATE TABLE product (productid VARCHAR(2) NOT NULL, description 
 VARCHAR(20), price INT, quantityOnHand INT, PRIMARY KEY(productid));
@@ -38,7 +38,7 @@ quantitypurchased INT, PRIMARY KEY(customerid, productid), FOREIGN
 KEY(customerid) REFERENCES customer(customerid), FOREIGN KEY(productid) 
 REFERENCES product(productid)); 
 
---list all tables to confirm creation 
+-- list all tables to confirm creation 
 SHOW TABLES; 
 
 
